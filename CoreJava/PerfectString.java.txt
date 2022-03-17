@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class PerfectString {
+	
+public static boolean perfectStringCheck(String input)
+{
+	int p1=0;
+	int p2=input.length()-1;
+	while(p1<p2) {
+		if(input.charAt(p1)==input.charAt(p2))
+		{
+			return false;
+		}
+		p1+=1;
+	    p2-=1;
+	}
+	return true;
+}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the input");
+        String str=sc.nextLine();
+        if(str.contains("P") || str.contains("R"))
+        {
+        	if(perfectStringCheck(str))
+        	{
+        		System.out.println("Perfect String");
+        	}
+        	else
+        	{
+        		System.out.println("Not a Perfect String");	
+        	}
+        }
+
+	}
+
+}
