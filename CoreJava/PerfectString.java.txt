@@ -1,38 +1,51 @@
 import java.util.Scanner;
-
-public class PerfectString {
-	
-public static boolean perfectStringCheck(String input)
-{
-	int p1=0;
-	int p2=input.length()-1;
-	while(p1<p2) {
-		if(input.charAt(p1)==input.charAt(p2))
-		{
-			return false;
-		}
-		p1+=1;
-	    p2-=1;
-	}
-	return true;
-}
+import java.util.List;
+import java.util.ArrayList;
+public class perfectString {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter the input");
-        String str=sc.nextLine();
-        if(str.contains("P") || str.contains("R"))
-        {
-        	if(perfectStringCheck(str))
-        	{
-        		System.out.println("Perfect String");
-        	}
-        	else
-        	{
-        		System.out.println("Not a Perfect String");	
-        	}
+		
+		int count=0,flag=0;
+		List<Character> chars = new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		String input=sc.next();
+		 for (char ch : input.toCharArray()) {
+  
+            chars.add(ch);
         }
+		 sc.close(); 
+		 for(int i=0;i<chars.size()-1;i++)
+		 {
+			 if(chars.get(i)=='P' && chars.get(i+1)=='R' || chars.get(i)=='R' && chars.get(i+1)=='P')
+			 {
+				 
+				 count=count+1;
+			 }
+		
+			 else
+			 {
+				 flag+=1;
+				System.out.println("imperfect");
+				 break;
+			 }
+		 }
+			if(count%2!=0)
+			{
+				if(flag==0)
+				{
+					System.out.println("perfect");
+				}
+			}
+			else
+			{ 
+				if(flag==0)
+				System.out.println("perfect");
+				else
+					System.out.println("imperfect");
+				
+			}
 
+		 }
+	
+	
 	}
-
-}
