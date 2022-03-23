@@ -1,4 +1,3 @@
-package junittesting;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -11,11 +10,17 @@ public class ValidipTesting {
 	
 	 @Test
 	   public void trueValidip() {
-         boolean ch=vip.isValid("192.168.1.1");
-	     assertTrue(ch);
+
+	     assertTrue(vip.isValid("192.168.1.1"));
+	     assertTrue(vip.isValid("1.1.1.1"));
+	     assertTrue(vip.isValid("10.0.0.1"));
+	     assertTrue(vip.isValid("127.0.0.1"));
 	   }
 	 @Test
 	   public void FalseValidip() {
-       boolean ch=vip.isValid("10.0.1");
-	     assertFalse(ch);
+	     assertFalse(vip.isValid("10.0.1"));
+	     assertFalse(vip.isValid("0.0.0.0"));
+	     assertFalse(vip.isValid("255.255.255.255"));
+	     assertFalse(vip.isValid("1.1.1.0"));
 	   }
+}
