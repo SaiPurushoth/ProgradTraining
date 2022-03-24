@@ -4,7 +4,7 @@ public class Metrictemperature {
 	public static String convertToCelsius(String input)
 	{
 		String[] units = input.split(" ");
-		double number=Double.parseDouble(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("C"))
 		{
 			return number+" C";
@@ -21,7 +21,7 @@ public class Metrictemperature {
 	public static String convertToFahrenheit(String input)
 	{
 		String[] units = input.split(" ");
-		double number=Double.parseDouble(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("C"))
 		{
 			return ((number*(9/5))+32)+" F";
@@ -39,7 +39,7 @@ public class Metrictemperature {
 	public static String convertToKelvin(String input)
 	{
 		String[] units = input.split(" ");
-		double number=Double.parseDouble(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("C"))
 		{
 			return (number+273.15)+" K";

@@ -16,8 +16,8 @@ public class MetriclengthTesting {
 		 String onem="1 m";
 		 String hundredcm="100 cm";
 		 
-		 assertEquals("1 cm",metricobject.convertToCentimeter(onecm));
-		 assertEquals("100 cm",metricobject.convertToCentimeter(onem));
+		 assertEquals("1.0 cm",metricobject.convertToCentimeter(onecm));
+		 assertEquals("100.0 cm",metricobject.convertToCentimeter(onem));
 		 
 		 assertEquals("0.001 km",metricobject.convertToKilometer(hundredcm));
 
@@ -30,7 +30,7 @@ public class MetriclengthTesting {
 		 String hundredcm="100 cm";
 		 String twohundredcm="200 cm";
 		 
-		 assertEquals("100200 cm",metricobject.totalDistance(twohundredcm,onekm));
+		 assertEquals("100200.0 cm",metricobject.totalDistance(twohundredcm,onekm));
 		 
 		 String output=metricobject.totalDistance(hundredcm,onem); 
 		 assertEquals("2.0 m",metricobject.convertToMeter(output));
@@ -45,7 +45,7 @@ public class MetriclengthTesting {
 		 String onem="1 m";
 		 String twothousandcm="2000 cm";
 		 
-		 assertEquals("1900 cm",metricobject.remainingDistance(twothousandcm,onem));
+		 assertEquals("1900.0 cm",metricobject.remainingDistance(twothousandcm,onem));
 		 
 		 String output=metricobject.remainingDistance(fiftycm,onem); 
 		 assertEquals("0.5 m",metricobject.convertToMeter(output));

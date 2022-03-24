@@ -5,7 +5,7 @@ public class Metricvolume {
 	public static String convertToGrams(String input)
 	{
 		String[] units = input.split(" ");
-		double number=Double.parseDouble(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("g"))
 		{
 			return number+" g";
@@ -19,11 +19,11 @@ public class Metricvolume {
 	public static String convertToKilogram(String input)
 	{
 		String[] units = input.split(" ");
-		double number=Double.parseDouble(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		
 		if(units[1].equals("g"))
 		{
-			return ((float)number/1000)+" kg";
+			return ((double)number/1000)+" kg";
 		}
 		else
 		{
@@ -35,8 +35,8 @@ public class Metricvolume {
 	{
 		String[] units_one = input_one.split(" ");
 		String[] units_two = input_two.split(" ");
-		double number_one=Double.parseDouble(units_one[0]);
-		double number_two=Double.parseDouble(units_two[0]);
+		Double number_one=Double.parseDouble(units_one[0]);
+		Double number_two=Double.parseDouble(units_two[0]);
 		
 		if(units_one[1].equals("g")  && units_two[1].contentEquals("g"))
 		{

@@ -5,7 +5,7 @@ public class Metriclength {
 	public static String convertToCentimeter(String input)
 	{
 		String[] units = input.split(" ");
-		int number=Integer.parseInt(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("cm"))
 		{
 			return number+" cm";
@@ -23,10 +23,10 @@ public class Metriclength {
 	public static String convertToMeter(String input)
 	{
 		String[] units = input.split(" ");
-		int number=Integer.parseInt(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("cm"))
 		{
-			return ((float)number/100)+" m";
+			return ((double)number/100)+" m";
 		}
 		if(units[1].equals("m"))
 		{
@@ -41,14 +41,14 @@ public class Metriclength {
 	public static String convertToKilometer(String input)
 	{
 		String[] units = input.split(" ");
-		int number=Integer.parseInt(units[0]);
+		Double number=Double.parseDouble(units[0]);
 		if(units[1].equals("cm"))
 		{
-			return ((float)number/100000)+" km";
+			return ((double)number/100000)+" km";
 		}
 		if(units[1].equals("m"))
 		{
-			return ((float)number/1000)+" km";
+			return ((double)number/1000)+" km";
 		}
 		else
 		{
@@ -59,8 +59,8 @@ public class Metriclength {
 	{
 		String[] units_one = input_one.split(" ");
 		String[] units_two = input_two.split(" ");
-		int number_one=Integer.parseInt(units_one[0]);
-		int number_two=Integer.parseInt(units_two[0]);
+		Double number_one=Double.parseDouble(units_one[0]);
+		Double number_two=Double.parseDouble(units_two[0]);
 		
 		if(units_one[1].equals("cm")  && units_two[1].contentEquals("cm"))
 		{
@@ -72,14 +72,14 @@ public class Metriclength {
 			{
 			String mtocm = 	convertToCentimeter(input_one);
 			units_one = mtocm.split(" ");
-			number_one=Integer.parseInt(units_one[0]);
+			number_one=Double.parseDouble(units_one[0]);
 			return (number_one+number_two)+" cm";
 			}
 			else
 			{
 				String mtocm = 	convertToCentimeter(input_two);
 				units_two = mtocm.split(" ");
-				number_two=Integer.parseInt(units_two[0]);
+				number_two=Double.parseDouble(units_two[0]);
 				return (number_one+number_two)+" cm";
 				
 			}
@@ -91,14 +91,14 @@ public class Metriclength {
 			{
 			String mtokm = 	convertToCentimeter(input_one);
 			units_one = mtokm.split(" ");
-			number_one=Integer.parseInt(units_one[0]);
+			number_one=Double.parseDouble(units_one[0]);
 			return (number_one+number_two)+" cm";
 			}
 			else
 			{
 				String mtokm = 	convertToCentimeter(input_two);
 				units_two = mtokm.split(" ");
-				number_two=Integer.parseInt(units_two[0]);
+				number_two=Double.parseDouble(units_two[0]);
 				return (number_one+number_two)+" cm";
 				
 			}
@@ -110,8 +110,8 @@ public class Metriclength {
 	{
 		String[] units_one = input_one.split(" ");
 		String[] units_two = input_two.split(" ");
-		int number_one=Integer.parseInt(units_one[0]);
-		int number_two=Integer.parseInt(units_two[0]);
+	    Double number_one=Double.parseDouble(units_one[0]);
+		Double number_two=Double.parseDouble(units_two[0]);
 		
 		if(units_one[1].equals("cm")  && units_two[1].contentEquals("cm"))
 		{
@@ -130,7 +130,7 @@ public class Metriclength {
 			{
 			String mtocm = 	convertToCentimeter(input_one);
 			units_one = mtocm.split(" ");
-			number_one=Integer.parseInt(units_one[0]);
+			number_one=Double.parseDouble(units_one[0]);
 			
 			if(number_one>number_two)
 			{
@@ -145,7 +145,7 @@ public class Metriclength {
 			{
 				String mtocm = 	convertToCentimeter(input_two);
 				units_two = mtocm.split(" ");
-				number_two=Integer.parseInt(units_two[0]);
+				number_two=Double.parseDouble(units_two[0]);
 				if(number_one>number_two)
 				{
 				return (number_one-number_two)+" cm";
@@ -164,7 +164,7 @@ public class Metriclength {
 			{
 			String mtokm = 	convertToCentimeter(input_one);
 			units_one = mtokm.split(" ");
-			number_one=Integer.parseInt(units_one[0]);
+			number_one=Double.parseDouble(units_one[0]);
 			if(number_one>number_two)
 			{
 			return (number_one-number_two)+" cm";
@@ -178,7 +178,7 @@ public class Metriclength {
 			{
 				String mtokm = 	convertToCentimeter(input_two);
 				units_two = mtokm.split(" ");
-				number_two=Integer.parseInt(units_two[0]);
+				number_two=Double.parseDouble(units_two[0]);
 				if(number_one>number_two)
 				{
 				return (number_one-number_two)+" cm";
