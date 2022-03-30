@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.app.models.AuthenticationRequest;
 import com.example.app.models.AuthenticationResponse;
+import com.example.app.models.UserDTO;
 import com.example.app.service.MyUserDetailsService;
 import com.example.app.utils.JwtUtil;
 
@@ -50,5 +51,12 @@ public class SpringContoller {
 		
 		return ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
+	
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+		return ResponseEntity.ok(userDetailsService.save(user));
+	}
+	
 	
 }
