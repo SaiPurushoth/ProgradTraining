@@ -35,7 +35,7 @@ public class SpringContoller {
 		
 		return "Index.jsp";
 	}
-	
+//	
 //	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
 //	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 //		try {
@@ -45,7 +45,7 @@ public class SpringContoller {
 //		catch(BadCredentialsException e) {
 //			throw new Exception("Incorrect username or password",e);
 //		}
-//		
+//	
 //		
 //		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 //		
@@ -53,8 +53,8 @@ public class SpringContoller {
 //		
 //		return ResponseEntity.ok(new AuthenticationResponse(jwt));
 //	}
-//	
-//	
+	
+	
 //	@RequestMapping(value = "/register", method = RequestMethod.POST)
 //	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
 //		return ResponseEntity.ok(userDetailsService.save(user));

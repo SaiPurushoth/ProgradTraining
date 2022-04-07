@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.app.models.UserDTO;
 import com.example.app.service.CookieService;
@@ -44,18 +45,34 @@ public class UserController {
 }
 	
 	@PostMapping("/register")
-	public String saveUser(UserDTO user) throws Exception {
+	public ModelAndView saveUser(UserDTO user) throws Exception {
+		try {
 		userDetailsService.save(user);
+
+		ModelAndView mv = new ModelAndView();
 		
-		return "redirect:/login";
+		String message="Signup Done,You can login";
+		mv.addObject("message", message);
+		mv.setViewName("Login.jsp");
+		return mv;
+		}
+		catch(Exception e)
+		{
+			ModelAndView mv = new ModelAndView();
+			String message="You are already a user, please use different mail id";
+			mv.addObject("message", message);
+			mv.setViewName("Signup.jsp");
+			return mv;
+		}
 }
 	
 	
 	@PostMapping("/checkLogin")
-	public String checkUser(@RequestParam("username") String email,@RequestParam("password") String password,HttpServletResponse resp) throws Exception {
+	public ModelAndView checkUser(@RequestParam("username") String email,@RequestParam("password") String password,HttpServletResponse resp) throws Exception {
 		
 		
 		try {
+			ModelAndView mv = new ModelAndView("redirect:/");
 			authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(email, password));
 			
@@ -65,10 +82,15 @@ public class UserController {
 			
 			resp.addCookie(cookieService.getJwtCookie(jwt));
 			
-			return "redirect:/";	
+			return mv;	
 	        }	
 		catch(BadCredentialsException e) {
-			return "redirect:/users/login?messasg=Invalid+email+or+password&status=danger&show=show";
+			
+			ModelAndView mv = new ModelAndView();
+			String message="Invalid: "+email+" or "+"password";
+			mv.addObject("message",message);
+			mv.setViewName("Login.jsp");
+			return mv;
 		}
 	
 	}	

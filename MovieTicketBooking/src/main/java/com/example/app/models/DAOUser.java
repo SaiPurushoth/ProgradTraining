@@ -15,11 +15,9 @@ public class DAOUser {
 	private String name;
 	@Column
 	private int age;
-	@Column
-
+	@Column(unique=true)
 	private String username;
-	@Column
-	
+	@Column	
 	@JsonIgnore
 	private String password;
 	
