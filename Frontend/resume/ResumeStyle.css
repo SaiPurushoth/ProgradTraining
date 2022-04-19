@@ -1,0 +1,21 @@
+#main{
+    border-radius: 20px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #666;
+    background-color: antiquewhite;
+}
+th{
+    padding: 15px;
+}
+#name{
+    background-color: burlywood;
+    text-align: center;
+}
+nav{
+    text-align: center;
+}
+nav a{
+    text-decoration: none;
+    background-color:lightcyan;
+    padding: 10px;
+}

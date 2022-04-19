@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Purushoth</title>
+
+    <style>
+:root{
+--height:150px;
+--width:200px;
+}
+
+#radial {
+  height:var(--height);
+  width: var(--width);
+  background: radial-gradient(red, green, blue);
+ /* background-image: radial-gradient(red 5%, green 15%, blue 60%);
+  background-image: radial-gradient(circle, red, yellow, green);*/
+}
+#linear {
+  height: var(--height);
+  width: var(--width);
+  background-image: linear-gradient(red, yellow);
+    /*background-image: linear-gradient(to right, red , yellow);*/
+}
+
+#conical {
+    height: var(--height);
+  width: var(--width);
+  background-image: repeating-conic-gradient(red 10%, yellow 20%);
+  border-radius: 50%;
+}
+
+       </style>
+    
+</head>
+<body>
+
+    <h3>Radial Gradient</h3>
+    <div id="radial"></div>
+    <h3>Linear Gradient</h3>
+    <div id="linear"></div>
+
+    <h3>Conic Gradient</h3>
+    <div id="conical"></div>
+</body>
+</html>

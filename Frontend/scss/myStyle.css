@@ -1,0 +1,23 @@
+h2 {
+  border: 1px solid blue;
+  text-align: center;
+}
+
+h3 {
+  border: 2px solid green;
+  text-align: center;
+}
+
+#home, #submit {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#submit {
+  background-color: green;
+  color: white;
+}
+/*# sourceMappingURL=myStyle.css.map */

@@ -1,0 +1,56 @@
+
+
+
+#calendar{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background-color:burlywood;
+    padding: 2%;
+}
+.days{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 13%;
+    font-size: 150%;
+    text-align: center;
+
+}
+div:nth-child(11){
+border-left: 2px solid black;
+}
+div:nth-child(3),:nth-child(4),:nth-child(5),:nth-child(6),:nth-child(34){
+    border-bottom: 2px solid black;
+    }
+div:nth-child(14),:nth-child(15),:nth-child(16),:nth-child(17){
+        border-top: 2px solid black;
+        }  
+.blank{
+    grid-column: 1/5;
+}
+.month{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 150%;
+    padding: 2%;
+    text-align: center;
+    grid-column: 1/8;
+}
+.title{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 150%;
+    padding: 2%;
+    text-align: center;
+    grid-column: 1/8;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+.days:hover{
+    background-color: aqua;
+}
+h1,h2{
+    text-align: center;
+}

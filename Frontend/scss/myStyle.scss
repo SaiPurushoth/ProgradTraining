@@ -1,0 +1,29 @@
+
+@mixin myborder($color, $width) {
+    border: $width solid $color;
+  }
+
+h2{
+    @include myborder(blue, 1px);
+    text-align:center;
+}
+h3{
+    @include myborder(green, 2px);
+    text-align:center;
+
+}
+
+
+#home{
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit{
+    @extend #home;
+    background-color: green;
+    color: white;
+}
