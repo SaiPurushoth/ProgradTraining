@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,20 +17,19 @@ public class CustomerController {
 
 	@Autowired
 	CustomerRepository repository;
-
+	
 	@RequestMapping("/")
+	public String home()
+	{
+		return "home.jsp";
+	}
+	@RequestMapping("/login")
 	public String login()
 	{
 		return "users/Login.jsp";
 	}
 
-	@RequestMapping("/signup")
-	public String signup()
-	{
-		return "users/Signup.jsp";
-	}
-
-	@RequestMapping("/checkLogin")
+	@PostMapping("/checkLogin")
 	public ModelAndView checkUser(@RequestParam("email") String email,@RequestParam("password") String password)
 	{
 		Customers user=repository.findByEmailAndPassword(email,password);
@@ -37,7 +37,7 @@ public class CustomerController {
 		if(Objects.isNull(user))
 		{
 			ModelAndView mv = new ModelAndView();
-			String message="Email or password is wrong, Not a user? please do signup";
+			String message="Email or password is wrong,please do signup";
 			mv.addObject("message", message);
 			mv.setViewName("users/Login.jsp");
 			return mv;
@@ -50,7 +50,7 @@ public class CustomerController {
 
 	}
 
-	@RequestMapping("/addCustomer")
+	@PostMapping("/addCustomer")
 	public ModelAndView addCustomer(Customers user)
 	{
 		try {
@@ -59,7 +59,7 @@ public class CustomerController {
 			
 			ModelAndView mv = new ModelAndView();
 			
-			String message="Signup Done,";
+			String message="Signup Done,Login Now";
 			mv.addObject("message", message);
 			mv.setViewName("users/Login.jsp");
 			return mv;
@@ -67,9 +67,9 @@ public class CustomerController {
 		catch(Exception e)
 		{
 			ModelAndView mv = new ModelAndView();
-			String message="You are already a user, please use different mail id";
+			String message="You are already a user,use different mail id";
 			mv.addObject("message", message);
-			mv.setViewName("users/Signup.jsp");
+			mv.setViewName("users/Login.jsp");
 			return mv;
 		}
 	}
